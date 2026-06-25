@@ -26,4 +26,4 @@ Use this checklist before publishing the repository publicly.
 - The repository is currently marked as `0.8.1 Draft`.
 - The draft license notice uses Creative Commons Attribution 4.0 International.
 - The copyright notice currently names Alan Cavanagh.
-- The folder is initialized as a local Git repository with no remote configured.
+- The public repository is hosted on GitHub.

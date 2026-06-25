@@ -49,7 +49,7 @@ To adopt HADF in a repository:
 3. Use `templates/small-change-template.md` for small, reversible changes.
 4. Use `templates/plan-template.md` for feature work or material changes.
 5. Use `templates/delivered-spec-template.md` after material changes.
-6. Use `examples/` when you want to see the expected level of detail.
+6. Start with `examples/README.md` when you want to see the expected level of detail.
 
 ## Adoption Modes
 
