@@ -1,0 +1,45 @@
+# Changelog
+
+All notable changes to the Human-Agent Development Framework should be documented in this file.
+
+This project uses deliberate framework versioning. Version entries should describe changes to the framework, templates, public repository structure, and adoption guidance.
+
+The format is based on human-readable release notes rather than generated commit history.
+
+## 0.8 Draft - 2026-06-25
+
+### Added
+
+- Added specification-centred delivery as a core principle.
+- Added a collaboration convergence model covering specification formation, guardrailed first-pass implementation, validation loops, and guardrail improvement.
+- Added explicit distinction between repository standards and agent operating guidance.
+
+### Changed
+
+- Clarified that existing repository reality is necessary evidence but not sufficient guidance by itself.
+
+## 0.7 Draft - 2026-06-25
+
+### Added
+
+- Added the core Human-Agent Development Framework draft.
+- Added agent operating guidance template.
+- Added decision-complete implementation plan template.
+- Added small-change template for lightweight adoption.
+- Added delivered specification template for post-implementation context.
+- Added public-facing README.
+- Added publication checklist.
+- Added local repository ignore rules.
+- Added approval and amendment model.
+- Added delivered specification location guidance.
+- Added lightweight success metric guidance.
+
+### Changed
+
+- Clarified task classification thresholds between small changes and feature work.
+- Aligned agent operating guidance with reclassification and amendment rules.
+- Aligned plan template with delivered specification conventions.
+
+### Notes
+
+- This is a draft version intended for review, refinement, and local iteration before public release.
