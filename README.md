@@ -84,6 +84,28 @@ The framework treats delivery as a convergence process:
 3. Validate and improve through focused loops
 4. Strengthen guardrails so future loops become fewer and cheaper
 
+```mermaid
+flowchart TB
+    subgraph S[Specification creation]
+        direction LR
+        S1[Intent] --> S2[Clarify] --> S3[Decide] --> S4[Validate feasibility]
+        S4 -. gaps .-> S2
+    end
+
+    subgraph I[Implementation]
+        direction LR
+        I1[Guardrailed first pass] --> I2[Validate] --> I3[Review] --> I4[Refine]
+        I4 -. not done .-> I2
+    end
+
+    D[Delivered specification]
+    G[Improved guardrails]
+
+    S -->|feasible spec| I
+    I -->|accepted| D
+    D --> G
+```
+
 ## Status
 
 This repository is currently a public draft.
