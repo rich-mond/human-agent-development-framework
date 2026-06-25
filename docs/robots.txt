@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rich-mond.github.io/human-agent-development-framework/sitemap.xml
+

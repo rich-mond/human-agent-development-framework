@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human-Agent Development Framework</title>
+  <meta name="description" content="A practical framework for reducing avoidable implementation loops in agent-assisted software development.">
+  <link rel="canonical" href="https://rich-mond.github.io/human-agent-development-framework/">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #ffffff;
+      --ink: #1f2328;
+      --muted: #59636e;
+      --line: #d0d7de;
+      --soft: #f6f8fa;
+      --accent: #0969da;
+      --accent-ink: #ffffff;
+      --spec: #fff8c5;
+      --impl: #ddf4ff;
+      --learn: #dafbe1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 56px 24px;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0 0 16px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 48px 0 12px;
+      font-size: 1.45rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 16px;
+      font-size: 1.05rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .version {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .lead {
+      max-width: 760px;
+      color: #3d444d;
+      font-size: 1.28rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--accent);
+      background: var(--soft);
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      color: var(--accent-ink);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: var(--soft);
+    }
+
+    .panel h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    .diagram {
+      margin-top: 28px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 22px;
+      background: #ffffff;
+    }
+
+    .lane {
+      min-width: 760px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .lane + .lane {
+      margin-top: 18px;
+    }
+
+    .lane.spec {
+      background: var(--spec);
+    }
+
+    .lane.impl {
+      background: var(--impl);
+    }
+
+    .lane-title {
+      margin-bottom: 12px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .step {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #8c959f;
+      border-radius: 8px;
+      padding: 10px;
+      background: #ffffff;
+      text-align: center;
+      font-weight: 650;
+    }
+
+    .loop-note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    .handoff {
+      margin: 12px 0;
+      color: var(--muted);
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .learn {
+      min-width: 760px;
+      margin-top: 18px;
+      border: 1px solid #8c959f;
+      border-radius: 8px;
+      padding: 16px;
+      background: var(--learn);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        padding: 36px 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="version">Version 0.8.1 Draft</p>
+    <h1>Human-Agent Development Framework</h1>
+
+    <p class="lead">
+      A practical framework for reducing avoidable implementation loops in agent-assisted software development.
+    </p>
+
+    <p>
+      HADF helps teams make decisions, assumptions, evidence, uncertainty, and ownership visible before they become code.
+    </p>
+
+    <div class="actions">
+      <a class="button primary" href="https://github.com/rich-mond/human-agent-development-framework/blob/main/framework.md">Read the framework</a>
+      <a class="button" href="https://github.com/rich-mond/human-agent-development-framework">View on GitHub</a>
+      <a class="button" href="https://github.com/rich-mond/human-agent-development-framework/tree/main/templates">Use the templates</a>
+      <a class="button" href="https://github.com/rich-mond/human-agent-development-framework/tree/main/examples">See examples</a>
+    </div>
+
+    <h2>Core Idea</h2>
+
+    <p>
+      Every decision left open by a plan becomes a decision the agent may make during implementation.
+      HADF improves delivery quality by making the right decisions explicit at the right time, with the right owner.
+    </p>
+
+    <div class="diagram" aria-label="Human-agent development convergence model">
+      <div class="lane spec">
+        <div class="lane-title">Specification creation</div>
+        <div class="steps">
+          <div class="step">Intent</div>
+          <div class="step">Clarify</div>
+          <div class="step">Decide</div>
+          <div class="step">Validate feasibility</div>
+        </div>
+        <div class="loop-note">If gaps remain, loop back through clarification and decisions.</div>
+      </div>
+
+      <div class="handoff">Feasible specification</div>
+
+      <div class="lane impl">
+        <div class="lane-title">Implementation</div>
+        <div class="steps">
+          <div class="step">Guardrailed first pass</div>
+          <div class="step">Validate</div>
+          <div class="step">Review</div>
+          <div class="step">Refine</div>
+        </div>
+        <div class="loop-note">If the work is not done, loop through refinement, validation, and review.</div>
+      </div>
+
+      <div class="handoff">Accepted implementation</div>
+      <div class="learn">Delivered specification -> improved guardrails for future work</div>
+    </div>
+
+    <h2>What Problem Does It Solve?</h2>
+
+    <p>
+      AI coding agents can produce code quickly, but the expensive part of agent-assisted development is often convergence:
+      the work required to move from an initial request to an accepted, maintainable implementation.
+    </p>
+
+    <div class="grid">
+      <section class="panel">
+        <h3>For Humans</h3>
+        <p>
+          HADF keeps intent, judgement, accountability, and understanding visible throughout delivery.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h3>For Agents</h3>
+        <p>
+          HADF gives coding agents clearer specifications, guardrails, stop rules, and validation expectations.
+        </p>
+      </section>
+    </div>
+
+    <h2>Start Here</h2>
+
+    <ul>
+      <li>Read the core framework.</li>
+      <li>Copy the agent guidance template into your repository.</li>
+      <li>Use the small-change template for narrow, reversible work.</li>
+      <li>Use the plan template for material changes.</li>
+      <li>Capture what was actually delivered using the delivered-spec template.</li>
+    </ul>
+
+    <footer>
+      <p>
+        Human-Agent Development Framework is licensed under Creative Commons Attribution 4.0 International.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
+
