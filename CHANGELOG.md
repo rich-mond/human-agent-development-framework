@@ -6,6 +6,19 @@ This project uses deliberate framework versioning. Version entries should descri
 
 The format is based on human-readable release notes rather than generated commit history.
 
+## 0.8.1 Draft - 2026-06-25
+
+### Added
+
+- Added a short `Start Here` section to the README.
+- Added contribution guidance.
+- Added compact worked examples for a small change, feature plan, and delivered specification.
+
+### Changed
+
+- Renamed `LICENSE.md` to the conventional root `LICENSE` file.
+- Updated publication checklist items now covered by examples and license packaging.
+
 ## 0.8 Draft - 2026-06-25
 
 ### Added

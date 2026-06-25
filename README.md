@@ -1,6 +1,6 @@
 # Human-Agent Development Framework
 
-Version: 0.8 Draft
+Version: 0.8.1 Draft
 
 The Human-Agent Development Framework (HADF) is a practical collaboration model for humans and AI coding agents.
 
@@ -31,20 +31,25 @@ This framework is intended for:
 
 - `framework.md` - the core framework
 - `CHANGELOG.md` - deliberate versioned changes to the framework and templates
-- `LICENSE.md` - license notice and attribution guidance
+- `LICENSE` - license notice and attribution guidance
 - `PUBLICATION-CHECKLIST.md` - release-readiness checks before publishing publicly
+- `CONTRIBUTING.md` - contribution and feedback guidance
+- `examples/` - compact worked examples
 - `templates/agents-template.md` - a template for repository-specific agent operating guidance
 - `templates/plan-template.md` - a decision-complete implementation plan template for material changes
 - `templates/small-change-template.md` - a lightweight template for narrow, reversible changes
 - `templates/delivered-spec-template.md` - a template for capturing what was actually delivered
 
-## Quick Start
+## Start Here
 
-1. Read `framework.md` to understand the collaboration model.
-2. Copy `templates/agents-template.md` into your repository as `agents.md` or adapt it to your agent platform.
-3. Use `templates/plan-template.md` for feature work, public contract changes, persistence changes, security-sensitive changes, and cross-cutting work.
-4. Use `templates/small-change-template.md` for narrow, local, reversible changes.
-5. Use `templates/delivered-spec-template.md` after material changes so future humans and agents understand what changed and why.
+To adopt HADF in a repository:
+
+1. Read `framework.md`.
+2. Copy `templates/agents-template.md` into your repository as `AGENTS.md` or equivalent.
+3. Use `templates/small-change-template.md` for small, reversible changes.
+4. Use `templates/plan-template.md` for feature work or material changes.
+5. Use `templates/delivered-spec-template.md` after material changes.
+6. Use `examples/` when you want to see the expected level of detail.
 
 ## Adoption Modes
 

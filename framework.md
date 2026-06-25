@@ -1,6 +1,6 @@
 # Human-Agent Development Framework (HADF)
 
-Version: 0.8 Draft
+Version: 0.8.1 Draft
 
 ## Purpose
 

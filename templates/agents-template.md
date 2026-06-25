@@ -1,6 +1,6 @@
 # Agent Operating Guidance Template
 
-Version: 0.8 Draft
+Version: 0.8.1 Draft
 
 This template can be adapted into `agents.md` for a repository using the Human-Agent Development Framework (HADF).
 
