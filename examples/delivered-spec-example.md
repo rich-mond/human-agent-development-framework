@@ -1,6 +1,6 @@
 # Delivered Specification Example
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 This example continues the fictional task management application scenario from `feature-plan-example.md`.
 

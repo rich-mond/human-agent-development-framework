@@ -8,7 +8,7 @@ The repository is already public, so this checklist is no longer about first pub
 
 - Repository: `https://github.com/rich-mond/human-agent-development-framework`
 - Pages site: `https://rich-mond.github.io/human-agent-development-framework/`
-- Current draft: `0.8.2 Draft`
+- Current draft: `0.8.3 Draft`
 - License: Creative Commons Attribution 4.0 International
 - Copyright: Alan Cavanagh
 - Public feedback: issues and pull requests are guided by `CONTRIBUTING.md`
@@ -46,4 +46,3 @@ The repository is already public, so this checklist is no longer about first pub
 - Confirm Google Search Console verification still works
 - Submit or resubmit the sitemap after material Pages changes
 - Consider writing a short announcement post for major draft or stable releases
-

@@ -1,6 +1,6 @@
 # Small Change Template
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 Use this template for narrow, local, reversible changes that do not materially affect architecture, public contracts, persistence, security, runtime configuration, deployment, or cross-cutting behaviour.
 

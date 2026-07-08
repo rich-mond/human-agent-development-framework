@@ -6,6 +6,19 @@ This project uses deliberate framework versioning. Version entries should descri
 
 The format is based on human-readable release notes rather than generated commit history.
 
+## 0.8.3 Draft - 2026-07-08
+
+### Added
+
+- Added grounding over fluency as a core framework principle.
+- Added grounding failure as a primary failure mode.
+- Added explicit grounding rules to the `AGENTS.md` template.
+
+### Changed
+
+- Reworked `templates/agents-template.md` into a shorter, machine-focused `AGENTS.md` template.
+- Updated active version markers to `0.8.3 Draft`.
+
 ## 0.8.2 Draft - 2026-07-08
 
 ### Added
