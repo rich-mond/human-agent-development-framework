@@ -1,6 +1,6 @@
 # Human-Agent Development Framework
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 The Human-Agent Development Framework (HADF) is a practical collaboration model for humans and AI coding agents.
 
@@ -30,11 +30,12 @@ This framework is intended for:
 ## Repository Contents
 
 - `framework.md` - the core framework
+- `ADOPTION.md` - practical adoption guidance for teams
 - `CHANGELOG.md` - deliberate versioned changes to the framework and templates
 - `LICENSE` - license notice and attribution guidance
-- `PUBLICATION-CHECKLIST.md` - release-readiness checks before publishing publicly
+- `PUBLICATION-CHECKLIST.md` - checks for coherent public draft and stable releases
 - `CONTRIBUTING.md` - contribution and feedback guidance
-- `examples/` - compact worked examples
+- `examples/` - compact worked examples, including one ambiguity example
 - `templates/agents-template.md` - a template for repository-specific agent operating guidance
 - `templates/plan-template.md` - a decision-complete implementation plan template for material changes
 - `templates/small-change-template.md` - a lightweight template for narrow, reversible changes
@@ -45,11 +46,12 @@ This framework is intended for:
 To adopt HADF in a repository:
 
 1. Read `framework.md`.
-2. Copy `templates/agents-template.md` into your repository as `AGENTS.md` or equivalent.
-3. Use `templates/small-change-template.md` for small, reversible changes.
-4. Use `templates/plan-template.md` for feature work or material changes.
-5. Use `templates/delivered-spec-template.md` after material changes.
-6. Start with `examples/README.md` when you want to see the expected level of detail.
+2. Use `ADOPTION.md` to choose a lightweight, standard, or full adoption path.
+3. Copy `templates/agents-template.md` into your repository as `AGENTS.md` or equivalent.
+4. Use `templates/small-change-template.md` for small, reversible changes.
+5. Use `templates/plan-template.md` for feature work or material changes.
+6. Use `templates/delivered-spec-template.md` after material changes.
+7. Start with `examples/README.md` when you want to see the expected level of detail.
 
 ## Adoption Modes
 

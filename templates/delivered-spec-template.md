@@ -1,6 +1,6 @@
 # Delivered Specification Template
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 Use this template after feature work, material behaviour changes, public contract changes, persistence changes, workflow changes, runtime configuration changes, deployment changes, or other changes where future context matters.
 

@@ -1,6 +1,6 @@
 # Agent Operating Guidance Template
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 This template can be adapted into `agents.md` for a repository using the Human-Agent Development Framework (HADF).
 
@@ -241,6 +241,10 @@ During implementation:
 - Preserve unrelated user changes
 - Keep public contracts stable unless change is approved
 - Surface newly discovered decisions before proceeding when they are material
+
+Approval to implement does not imply approval to commit, push, deploy, publish, or create a pull request.
+
+Those actions require explicit approval for the named action.
 
 ## Validation Conduct
 

@@ -6,6 +6,20 @@ This project uses deliberate framework versioning. Version entries should descri
 
 The format is based on human-readable release notes rather than generated commit history.
 
+## 0.8.2 Draft - 2026-07-08
+
+### Added
+
+- Added `ADOPTION.md` with Day 1, Week 1, and full adoption guidance.
+- Added approval levels for investigation, implementation, and publish/operate actions.
+- Added section criticality markers to the feature plan template.
+- Added a messy ambiguity example showing when an agent should stop and reclassify work.
+
+### Changed
+
+- Updated README and Pages landing page to point to adoption guidance.
+- Improved the Pages landing page convergence diagram.
+
 ## 0.8.1 Draft - 2026-06-25
 
 ### Added

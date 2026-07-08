@@ -1,6 +1,6 @@
 # Delivered Specification Example
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 This example continues the fictional task management application scenario from `feature-plan-example.md`.
 
@@ -86,4 +86,3 @@ Residual risk: Low; index performance should be monitored if project volume grow
 
 - The plan correctly identified migration data quality as the main stop condition.
 - Repository standards should document whether uniqueness constraints require service-layer checks, database constraints, or both.
-

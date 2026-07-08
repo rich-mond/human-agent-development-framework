@@ -1,6 +1,6 @@
 # Small Change Example
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 ## 1. Change Name
 
@@ -67,4 +67,3 @@ After implementation, capture:
 - Final copy used
 - Validation performed
 - Any snapshot updates
-
