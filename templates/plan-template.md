@@ -1,6 +1,6 @@
 # Decision-Complete Implementation Plan Template
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 This template is intended for feature work, material behaviour changes, cross-cutting changes, public API changes, persistence changes, workflow changes, runtime configuration changes, deployment changes, or other work where implementation decisions matter.
 

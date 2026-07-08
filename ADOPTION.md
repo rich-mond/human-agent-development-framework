@@ -1,6 +1,6 @@
 # Adoption Guide
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 This guide helps teams adopt the Human-Agent Development Framework without turning it into ceremony.
 
@@ -101,4 +101,3 @@ Use the full template when the change affects architecture, public contracts, pe
 - Asking agents to make business or architecture decisions without approval
 - Skipping delivered specifications for changes that future work will depend on
 - Capturing lessons but not updating guardrails
-

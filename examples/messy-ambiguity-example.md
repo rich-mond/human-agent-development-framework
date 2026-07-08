@@ -1,6 +1,6 @@
 # Messy Ambiguity Example
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 This example shows how HADF handles a request that looks simple but contains hidden product, data, and operational decisions.
 
@@ -90,4 +90,3 @@ This request reveals a missing repository standard:
 - Archive visibility rules should be documented by surface: list, search, reports, API, and exports.
 
 Adding that standard would reduce future implementation loops around archived data.
-

@@ -1,6 +1,6 @@
 # Human-Agent Development Framework
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 The Human-Agent Development Framework (HADF) is a practical collaboration model for humans and AI coding agents.
 

@@ -1,6 +1,6 @@
 # Human-Agent Development Framework (HADF)
 
-Version: 0.8.2 Draft
+Version: 0.8.3 Draft
 
 ## Purpose
 
@@ -59,15 +59,15 @@ Success is measured by minimal rework, minimal correction loops, minimal archite
 
 Success is not measured by lines of code generated, number of files modified, or initial implementation speed.
 
-### Principle 2 - Clarification Over Correction
+### Principle 2 - Grounding Over Fluency
 
-Questions asked before implementation are usually cheaper than corrections made afterwards.
+An agent response that sounds coherent but is not grounded is a delivery risk.
 
-The agent should not optimise for asking zero questions.
+The agent should prioritise accuracy, evidence, and uncertainty disclosure over confident fluency.
 
-The agent should optimise for asking the minimum number of questions required to avoid costly rework.
+When evidence is incomplete, the agent should say what is known, what is inferred, and what remains unknown.
 
-Stopping, asking, investigating, or reporting uncertainty are valid outcomes when they prevent incorrect implementation.
+The agent must not invent facts, command output, file contents, repository behaviour, citations, test results, or human intent.
 
 ### Principle 3 - Imperfect Information Is Normal
 
@@ -81,37 +81,27 @@ Unknown uncertainty is dangerous.
 
 Known uncertainty can be investigated, accepted, deferred, or explicitly designed around.
 
-### Principle 4 - Human Understanding And Accountability Remain Central
+### Principle 4 - Clarification Over Correction
 
-The system must not become a black box.
+Questions asked before implementation are usually cheaper than corrections made afterwards.
 
-Humans remain accountable for accepting, operating, maintaining, and evolving the delivered system.
+The agent should not optimise for asking zero questions.
 
-Humans must retain sufficient understanding to:
+The agent should optimise for asking the minimum number of questions required to avoid costly rework.
 
-- Explain the implementation
-- Operate the system
-- Troubleshoot failures
-- Extend the system
-- Recover the system without the agent
+Stopping, asking, investigating, or reporting uncertainty are valid outcomes when they prevent incorrect implementation.
 
-If removing the agent would leave the team unable to understand the system, the framework has failed.
+### Principle 5 - The Specification Is The Centre Of Gravity
 
-### Principle 5 - Preserve Repository Equilibrium
+Implementation should be guided by a cohesive specification rather than by prompt fragments, isolated tickets, or implicit expectations.
 
-Repositories evolve over time into a working equilibrium of patterns, conventions, trade-offs, historical decisions, and operational knowledge.
+The specification does not need to predict every implementation detail.
 
-Repository consistency is generally preferred over introducing a theoretically superior design.
+It should define enough shared understanding for implementation to be feasible, including intent, scope, constraints, acceptance expectations, decision ownership, and known uncertainty.
 
-Unless explicitly requested:
+When the specification changes, the implementation target changes.
 
-- Existing patterns should be reused
-- Existing architecture should be preserved
-- Existing conventions should be followed
-
-The existence of a theoretically superior solution is insufficient justification for changing repository equilibrium.
-
-The burden of proof for changing repository equilibrium is higher than the burden of proof for preserving it.
+The agent should treat the approved specification as the primary description of what is being made.
 
 ### Principle 6 - Open Decisions Become Agent Decisions
 
@@ -135,17 +125,37 @@ Agents may own local implementation decisions, internal structure decisions, nam
 
 Decision ownership should be explicit whenever a decision materially affects behaviour, architecture, data, security, operations, or future maintenance.
 
-### Principle 9 - The Specification Is The Centre Of Gravity
+### Principle 9 - Preserve Repository Equilibrium
 
-Implementation should be guided by a cohesive specification rather than by prompt fragments, isolated tickets, or implicit expectations.
+Repositories evolve over time into a working equilibrium of patterns, conventions, trade-offs, historical decisions, and operational knowledge.
 
-The specification does not need to predict every implementation detail.
+Repository consistency is generally preferred over introducing a theoretically superior design.
 
-It should define enough shared understanding for implementation to be feasible, including intent, scope, constraints, acceptance expectations, decision ownership, and known uncertainty.
+Unless explicitly requested:
 
-When the specification changes, the implementation target changes.
+- Existing patterns should be reused
+- Existing architecture should be preserved
+- Existing conventions should be followed
 
-The agent should treat the approved specification as the primary description of what is being made.
+The existence of a theoretically superior solution is insufficient justification for changing repository equilibrium.
+
+The burden of proof for changing repository equilibrium is higher than the burden of proof for preserving it.
+
+### Principle 10 - Human Understanding And Accountability Remain Central
+
+The system must not become a black box.
+
+Humans remain accountable for accepting, operating, maintaining, and evolving the delivered system.
+
+Humans must retain sufficient understanding to:
+
+- Explain the implementation
+- Operate the system
+- Troubleshoot failures
+- Extend the system
+- Recover the system without the agent
+
+If removing the agent would leave the team unable to understand the system, the framework has failed.
 
 ## Non-Overridable Safety Constraints
 
@@ -169,6 +179,7 @@ The framework is designed to reduce these failure modes.
 - Alignment failure: the implementation is technically correct but inconsistent with repository expectations.
 - Scope failure: the implementation modifies areas outside approved boundaries.
 - Confidence failure: the agent presents inference as fact.
+- Grounding failure: the agent produces plausible but unsupported claims.
 - Understanding failure: humans lose understanding of the resulting system.
 - Process failure: the process becomes heavier than the change requires.
 - Decision failure: a decision is made by the wrong party or at the wrong level.
