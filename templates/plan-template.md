@@ -1,6 +1,6 @@
 # Decision-Complete Implementation Plan Template
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 This template is intended for feature work, material behaviour changes, cross-cutting changes, public API changes, persistence changes, workflow changes, runtime configuration changes, deployment changes, or other work where implementation decisions matter.
 
@@ -8,11 +8,17 @@ Small, local, reversible changes may use a lighter plan.
 
 When approved, this plan becomes the implementation specification for the change.
 
-## 1. Feature Or Change Name
+Section markers mean:
+
+- [Required]: complete for every feature-work plan
+- [Conditional]: complete when the change affects that area
+- [Optional]: complete when useful for learning or future context
+
+## 1. Feature Or Change Name [Required]
 
 Name:
 
-## 2. Task Classification
+## 2. Task Classification [Required]
 
 Select one:
 
@@ -25,17 +31,17 @@ Select one:
 
 Reason for classification:
 
-## 3. Objective
+## 3. Objective [Required]
 
 Describe the outcome to achieve.
 
-## 4. Business Context
+## 4. Business Context [Required]
 
 Explain why this change is needed.
 
 Include relevant business rules, product context, operational context, or user impact.
 
-## 5. Goals
+## 5. Goals [Required]
 
 The change must:
 
@@ -43,7 +49,7 @@ The change must:
 - 
 - 
 
-## 6. Non-Goals
+## 6. Non-Goals [Required]
 
 The change must not:
 
@@ -51,7 +57,7 @@ The change must not:
 - 
 - 
 
-## 7. Requirements
+## 7. Requirements [Required]
 
 Use stable identifiers so implementation and validation can be traced.
 
@@ -73,7 +79,7 @@ Requirement:
 
 Acceptance:
 
-## 8. Repository Guidance Reviewed
+## 8. Repository Guidance Reviewed [Required]
 
 List the guidance that applies.
 
@@ -97,7 +103,7 @@ List the guidance that applies.
 
 - 
 
-## 9. Evidence Summary
+## 9. Evidence Summary [Required]
 
 ### Proven
 
@@ -120,7 +126,7 @@ Information not yet proven.
 - 
 - 
 
-## 10. Decision Budget
+## 10. Decision Budget [Required]
 
 Define which decisions are human-owned, agent-owned, or shared.
 
@@ -156,7 +162,7 @@ These require judgement and may need clarification if material.
 - Performance trade-offs:
 - Evolution of existing patterns:
 
-## 11. Scope Boundaries
+## 11. Scope Boundaries [Required]
 
 ### Expected Areas To Change
 
@@ -173,7 +179,7 @@ These require judgement and may need clarification if material.
 - 
 - 
 
-## 12. Architecture And Design
+## 12. Architecture And Design [Required]
 
 Describe the intended design.
 
@@ -186,7 +192,7 @@ Include:
 - Alternatives considered
 - Reason for selected approach
 
-## 13. Data And Persistence Impact
+## 13. Data And Persistence Impact [Conditional]
 
 State whether the change affects:
 
@@ -201,7 +207,7 @@ State whether the change affects:
 
 Details:
 
-## 14. API And Contract Impact
+## 14. API And Contract Impact [Conditional]
 
 State whether the change affects:
 
@@ -217,7 +223,7 @@ State whether the change affects:
 
 Details:
 
-## 15. Security, Privacy, And Authorization Impact
+## 15. Security, Privacy, And Authorization Impact [Conditional]
 
 State whether the change affects:
 
@@ -232,7 +238,7 @@ State whether the change affects:
 
 Details:
 
-## 16. Runtime, Configuration, And Deployment Impact
+## 16. Runtime, Configuration, And Deployment Impact [Conditional]
 
 State whether the change affects:
 
@@ -247,7 +253,7 @@ State whether the change affects:
 
 Details:
 
-## 17. Implementation Approach
+## 17. Implementation Approach [Required]
 
 List the planned steps.
 
@@ -275,7 +281,7 @@ Requirements covered:
 
 Files or areas:
 
-## 18. Validation Plan
+## 18. Validation Plan [Required]
 
 List the validation required before completion.
 
@@ -311,7 +317,7 @@ Reason:
 
 Residual risk:
 
-## 19. Documentation Plan
+## 19. Documentation Plan [Conditional]
 
 State whether documentation must be updated.
 
@@ -324,7 +330,7 @@ State whether documentation must be updated.
 
 Reason:
 
-## 20. Stop Conditions
+## 20. Stop Conditions [Required]
 
 The agent must stop if:
 
@@ -334,7 +340,7 @@ The agent must stop if:
 
 Include any project-specific stop conditions.
 
-## 21. Assumptions Accepted For Implementation
+## 21. Assumptions Accepted For Implementation [Required]
 
 List assumptions explicitly accepted by the human.
 
@@ -343,7 +349,7 @@ List assumptions explicitly accepted by the human.
 
 No unstated assumption should become implementation.
 
-## 22. Risks
+## 22. Risks [Required]
 
 ### Implementation Risks
 
@@ -361,7 +367,7 @@ No unstated assumption should become implementation.
 
 - 
 
-## 23. Acceptance Criteria
+## 23. Acceptance Criteria [Required]
 
 The change is accepted when:
 
@@ -369,7 +375,7 @@ The change is accepted when:
 - 
 - 
 
-## 24. Delivered Specification Requirements
+## 24. Delivered Specification Requirements [Conditional]
 
 For feature work and material behaviour changes, the delivered specification should capture:
 
@@ -389,7 +395,7 @@ Recommended convention:
 
 - `docs/delivered-specs/YYYY-MM-DD-change-name.md`
 
-## 25. Framework Learning Questions
+## 25. Framework Learning Questions [Optional]
 
 After completion, answer if useful:
 
@@ -401,9 +407,13 @@ After completion, answer if useful:
 - Which agent guidance should be improved?
 - Which part of the process created unnecessary friction?
 
-## 26. Approval
+## 26. Approval [Required]
 
-Human approval to implement:
+Approval level:
+
+- Approval to investigate:
+- Approval to implement:
+- Approval to commit, push, deploy, publish, or create a pull request:
 
 Approved by:
 

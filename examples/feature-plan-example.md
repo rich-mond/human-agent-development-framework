@@ -1,6 +1,6 @@
 # Feature Plan Example
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 This example uses the decision-complete implementation plan shape for a fictional task management application.
 
@@ -333,11 +333,14 @@ After completion, answer if useful:
 
 ## 26. Approval
 
-Human approval to implement:
+Approval level:
+
+- Approval to investigate: Approved
+- Approval to implement: Approved
+- Approval to commit, push, deploy, publish, or create a pull request: Not approved
 
 Approved by: Example Product Owner
 
 Date: 2026-06-25
 
 Notes: Stop if existing duplicate data is found.
-

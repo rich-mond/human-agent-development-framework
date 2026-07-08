@@ -1,6 +1,6 @@
 # Human-Agent Development Framework (HADF)
 
-Version: 0.8.1 Draft
+Version: 0.8.2 Draft
 
 ## Purpose
 
@@ -433,6 +433,7 @@ Approval should be explicit when the agent is about to perform work that affects
 
 Approval may apply to:
 
+- Investigation
 - An implementation plan
 - An accepted assumption
 - A scope change
@@ -440,6 +441,12 @@ Approval may apply to:
 - A commit, push, deployment, publication, or pull request action
 
 Approval should identify what is being approved.
+
+Approval to investigate does not imply approval to implement.
+
+Approval to implement does not imply approval to commit, push, deploy, publish, or create a pull request.
+
+Approval to commit, push, deploy, publish, or create a pull request should name the specific action being approved.
 
 If implementation reveals a material decision that was not covered by the approved plan, the agent should stop and request an amendment before proceeding.
 
