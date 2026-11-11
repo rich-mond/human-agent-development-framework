@@ -1,12 +1,12 @@
 # Decision-Complete Implementation Plan Template
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 This template is intended for feature work, material behaviour changes, cross-cutting changes, public API changes, persistence changes, workflow changes, runtime configuration changes, deployment changes, or other work where implementation decisions matter.
 
 Small, local, reversible changes may use a lighter plan.
 
-When approved, this plan becomes the implementation specification for the change.
+When approved, this plan becomes the implementation specification for the change. Decision-complete planning resolves or assigns material decisions without prescribing every detail or guaranteeing correct execution.
 
 Section markers mean:
 
@@ -107,7 +107,7 @@ List the guidance that applies.
 
 ### Proven
 
-Information supported by existing code, standards, documentation, approved plans, or explicit human instruction.
+Information directly established by appropriate evidence. State what each source establishes: intended requirements, existing implementation, or behaviour demonstrated under specific conditions.
 
 - 
 - 
@@ -128,7 +128,7 @@ Information not yet proven.
 
 ## 10. Decision Budget [Required]
 
-Define which decisions are human-owned, agent-owned, or shared.
+Define which decisions are human-owned, agent-owned, or shared. Unresolved decisions do not transfer authority; newly discovered material decisions outside existing approval require clarification or amendment.
 
 ### Human-Owned Decisions
 
@@ -185,7 +185,7 @@ Describe the intended design.
 
 Include:
 
-- Existing patterns to reuse
+- Valid architectural intent and patterns to retain, or obsolete implementation to remove or replace within approved scope
 - Components affected
 - New components required
 - Dependencies introduced
@@ -283,7 +283,7 @@ Files or areas:
 
 ## 18. Validation Plan [Required]
 
-List the validation required before completion.
+List proportionate validation of relevant requirements and implementation properties, including representative user workflows where appropriate. A successful build or selected test run does not establish overall correctness. Avoid redundant checks; use the existing categories below only where applicable and identify remaining unverified behaviour.
 
 ### Build
 
@@ -406,6 +406,7 @@ After completion, answer if useful:
 - Which repository standard was missing, unclear, or ignored?
 - Which agent guidance should be improved?
 - Which part of the process created unnecessary friction?
+- What should be corrected, simplified, removed, or accepted before considering a new control?
 
 ## 26. Approval [Required]
 

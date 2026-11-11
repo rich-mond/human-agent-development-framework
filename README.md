@@ -1,6 +1,6 @@
 # Human-Agent Development Framework
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 The Human-Agent Development Framework (HADF) is a practical collaboration model for humans and AI coding agents.
 
@@ -17,6 +17,8 @@ HADF helps teams reduce convergence cost by defining:
 - How uncertainty should be surfaced
 - How repository standards and existing patterns should guide implementation
 - When agents should ask, proceed, stop, validate, or document
+
+Convergence cost can come from unclear requirements, poor decisions, execution or verification failures, and unnecessary implementation or process complexity. Success requires correct, maintainable delivery that humans understand, with proportionate verification and low avoidable rework and cost.
 
 ## Who This Is For
 
@@ -59,7 +61,7 @@ To adopt HADF in a repository:
 
 Use the agent operating guidance and small-change template only.
 
-This is appropriate when teams want better agent behavior without introducing a full planning process.
+This is appropriate when teams want better agent behaviour without introducing a full planning process.
 
 ### Standard Adoption
 
@@ -75,16 +77,16 @@ This is appropriate for teams that want to continuously improve agent-assisted d
 
 ## Core Idea
 
-Every decision left open by a plan becomes a decision the agent may make during implementation.
+Unresolved decisions create a risk of unauthorised assumptions; they do not transfer authority to the agent.
 
-HADF improves delivery quality by making the right decisions explicit at the right time, with the right owner.
+HADF supports delivery by making material decisions explicit with the right owner, then checking the implementation against approved requirements. Better planning reduces uncertainty but cannot guarantee correct execution.
 
 The framework treats delivery as a convergence process:
 
 1. Form a cohesive specification
 2. Produce a guardrailed first-pass implementation
 3. Validate and improve through focused loops
-4. Strengthen guardrails so future loops become fewer and cheaper
+4. Learn what to clarify, correct, simplify, remove, or accept; add controls only when justified
 
 ```mermaid
 flowchart TB
@@ -101,7 +103,7 @@ flowchart TB
     end
 
     D[Delivered specification]
-    G[Improved guardrails]
+    G[Proportionate improvements]
 
     S -->|feasible spec| I
     I -->|accepted| D

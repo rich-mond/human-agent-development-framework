@@ -1,6 +1,6 @@
 # Human-Agent Development Framework (HADF)
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 ## Purpose
 
@@ -16,36 +16,29 @@ It is designed to:
 - Make uncertainty visible before it becomes code
 - Improve decision quality throughout delivery
 
-The objective is maximum delivery quality and minimum avoidable iteration.
+The objective is reliable, maintainable delivery with human understanding, proportionate verification, and low avoidable rework and cost.
 
 Agent autonomy is valuable only when it contributes to those goals.
 
 ## Core Thesis
 
-The primary cost in agent-assisted development is not code generation.
+Code generation can be relatively inexpensive in agent-assisted development.
 
-The primary cost is implementation convergence.
+Implementation convergence can account for a substantial part of delivery cost, depending on the change and its context.
 
 Implementation convergence is the effort required to move from initial request to accepted implementation.
 
-Most convergence cost originates from:
+Convergence cost can arise from incomplete specifications, hidden assumptions, incorrect decisions, failures to follow explicit instructions, defective implementation, misread repository evidence, inadequate or misleading validation, excessive process or repeated verification, and unnecessary implementation complexity.
 
-- Hidden assumptions
-- Unresolved ambiguity
-- Incorrect decisions
-- Misaligned expectations
-- Architectural inconsistency
-- Poorly surfaced uncertainty
-
-The framework exists to reduce convergence cost by making decisions, assumptions, evidence, and uncertainty explicit before they become code.
+The framework aims to reduce avoidable convergence cost by making decisions, assumptions, evidence, and uncertainty explicit before they become code, then checking implementation against the agreed target. Better specifications reduce an important class of failures; execution, compliance, verification, and process design still need attention.
 
 ## Why This Framework Exists
 
 Modern coding agents can produce large amounts of code quickly.
 
-Implementation speed is no longer the primary constraint in many software changes.
+When code generation is quick, implementation speed may be less limiting than the effort needed to reach a correct, maintainable result.
 
-The expensive work is clarifying requirements, correcting misunderstandings, reworking implementations, preserving architectural consistency, maintaining system understanding, and re-establishing confidence in changes.
+Convergence work includes clarifying requirements, correcting misunderstandings and defects, preserving valid architectural intent, maintaining system understanding, and establishing confidence in changes.
 
 This framework exists to reduce those costs without pretending that agent-assisted development is already perfect or fully autonomous.
 
@@ -53,9 +46,9 @@ This framework exists to reduce those costs without pretending that agent-assist
 
 ### Principle 1 - Correctness Over Speed
 
-A fast incorrect implementation is slower than a slower correct implementation.
+Fast generation offers little benefit if correction and review outweigh the time saved.
 
-Success is measured by minimal rework, minimal correction loops, minimal architectural drift, and high first-pass acceptance.
+Success combines correct, maintainable delivery, compliance with material requirements, human understanding, proportionate verification, and low unnecessary cost. First-pass acceptance and fewer correction loops are useful indicators, but justified iteration can improve the result.
 
 Success is not measured by lines of code generated, number of files modified, or initial implementation speed.
 
@@ -68,6 +61,8 @@ The agent should prioritise accuracy, evidence, and uncertainty disclosure over 
 When evidence is incomplete, the agent should say what is known, what is inferred, and what remains unknown.
 
 The agent must not invent facts, command output, file contents, repository behaviour, citations, test results, or human intent.
+
+Evidence must support the specific claim being made. Code shows what was implemented; documentation can establish intent. Neither alone establishes correct runtime behaviour, and an agent's assertion of compliance is not independent evidence.
 
 ### Principle 3 - Imperfect Information Is Normal
 
@@ -97,23 +92,23 @@ Implementation should be guided by a cohesive specification rather than by promp
 
 The specification does not need to predict every implementation detail.
 
-It should define enough shared understanding for implementation to be feasible, including intent, scope, constraints, acceptance expectations, decision ownership, and known uncertainty.
+It should define enough shared understanding for implementation to be feasible, including intent, scope, constraints, acceptance expectations, decision ownership, and known uncertainty. A decision-complete plan sufficiently resolves or assigns the material decisions needed for implementation; it does not prescribe every detail or guarantee correct execution.
 
 When the specification changes, the implementation target changes.
 
 The agent should treat the approved specification as the primary description of what is being made.
 
-### Principle 6 - Open Decisions Become Agent Decisions
+### Principle 6 - Open Decisions Need Ownership
 
-Every decision left open by a plan becomes a decision the agent may make during implementation.
+An unresolved decision creates a risk of an unauthorised assumption; it does not transfer authority to the agent.
 
-Leave a decision open only when agent discretion is acceptable.
+Distinguish decisions explicitly delegated to the agent, decisions reserved for humans, and local implementation choices within approved boundaries. Material decisions discovered during implementation require clarification or amendment when existing approval does not cover them.
 
-### Principle 7 - Decisions Matter More Than Code
+### Principle 7 - Decision Quality Matters
 
-Most implementation rework originates from poor decisions rather than poor code generation.
+Decision quality can substantially affect rework, so producing more code is not a substitute for resolving material decisions. Even fully specified work can be implemented incorrectly.
 
-Plans should minimise unnecessary decisions, and agents should prefer established decisions over creating new ones.
+Plans should minimise unnecessary decisions, and agents should follow valid approved decisions rather than reopen them without reason.
 
 ### Principle 8 - Decision Ownership Must Be Explicit
 
@@ -127,19 +122,13 @@ Decision ownership should be explicit whenever a decision materially affects beh
 
 ### Principle 9 - Preserve Repository Equilibrium
 
-Repositories evolve over time into a working equilibrium of patterns, conventions, trade-offs, historical decisions, and operational knowledge.
+Repositories contain patterns, conventions, architectural intent, and operational knowledge that should inform changes.
 
-Repository consistency is generally preferred over introducing a theoretically superior design.
+Existing implementation is evidence, not authority. Code, tests, abstractions, workflows, and documentation may be obsolete, incorrect, unnecessarily complicated, inconsistent with approved requirements, or historical compromises that no longer fit.
 
-Unless explicitly requested:
+Respect valid architectural intent and repository-specific conventions. When approved requirements justify removal or replacement, prefer the simplest coherent solution over unnecessary compatibility or obsolete machinery. Avoid redundant state, duplicate responsibilities, and speculative abstractions.
 
-- Existing patterns should be reused
-- Existing architecture should be preserved
-- Existing conventions should be followed
-
-The existence of a theoretically superior solution is insufficient justification for changing repository equilibrium.
-
-The burden of proof for changing repository equilibrium is higher than the burden of proof for preserving it.
+Consistency alone does not justify preserving obsolete design, and a theoretically better design alone does not justify a rewrite. Material architectural decisions remain human-owned; agents must not initiate broad changes outside approved scope.
 
 ### Principle 10 - Human Understanding And Accountability Remain Central
 
@@ -183,7 +172,10 @@ The framework is designed to reduce these failure modes.
 - Understanding failure: humans lose understanding of the resulting system.
 - Process failure: the process becomes heavier than the change requires.
 - Decision failure: a decision is made by the wrong party or at the wrong level.
-- Guidance failure: the agent receives relevant guidance but fails to apply it with the correct priority.
+- Guidance failure: the agent misinterprets or fails to apply relevant instructions or their priority.
+- Implementation failure: the implementation is defective despite an adequate specification.
+- Verification failure: selected checks or reported results do not adequately establish the claimed properties.
+- Complexity failure: unnecessary implementation or process machinery increases delivery and operational cost.
 
 ## Reality Statement
 
@@ -201,6 +193,8 @@ Agents can:
 - Optimise for completion rather than correctness
 - Drift from scope or miss ambiguity
 - Apply generic best practices that conflict with local standards
+- Misinterpret explicit instructions or fail to apply relevant guidance
+- Claim compliance or successful validation without sufficient evidence
 - Lack true business context and genuine accountability for outcomes
 
 Neither party is infallible.
@@ -245,7 +239,9 @@ Humans remain accountable for accepting and operating that work.
 
 Agent-assisted development is shaped by multiple guidance layers.
 
-Each layer has a distinct purpose.
+Each layer has a distinct purpose. These are sources of guidance and context, not mandatory enforcement layers.
+
+Written instructions communicate expectations but do not independently guarantee compliance. Verification provides evidence of actual outcomes; enforced constraints can prevent prohibited operations where suitable mechanisms exist. For consequential properties, consider existing enforcement tools according to risk, impact, practicality, and implementation cost. Stronger wording alone does not establish more reliable compliance.
 
 ### Human Instruction
 
@@ -273,7 +269,7 @@ Agent operating guidance may cover when to ask questions, when to stop, how to t
 
 ### Existing Repository Reality
 
-Defines how the system actually works today.
+Provides evidence about how the system is implemented and operated today.
 
 Existing code, tests, configuration, documentation, and operational patterns are evidence that may reveal undocumented constraints.
 
@@ -296,7 +292,7 @@ The desired flow is:
 1. Specification formation
 2. Guardrailed first-pass implementation
 3. Validation and improvement loops
-4. Guardrail improvement
+4. Framework learning
 
 ### Specification Formation
 
@@ -310,7 +306,7 @@ Feasible does not mean certain; it means remaining uncertainty is known, owned, 
 
 The agent translates the specification into implementation within the repository's guardrails.
 
-Guardrails include approved plans, repository standards, agent operating guidance, existing code, tests, documentation, delivered specifications, and explicit human instruction.
+Guardrails may include approved plans, repository standards, agent operating guidance, tests, and enforced constraints where available. Existing code, documentation, and delivered specifications provide context and evidence. These sources differ in authority and assurance; written guidance alone does not ensure execution stays within bounds.
 
 The goal of the first pass is not perfection.
 
@@ -322,15 +318,15 @@ After the first pass, the work is validated, reviewed, corrected, and refined un
 
 Some loops are normal because not all information can be known upfront.
 
-Avoidable loops should be reduced, and useful loops should improve the implementation, improve the specification, or reveal a guardrail that should be strengthened.
+Avoidable loops should be reduced. Useful loops may correct implementation, improve the specification or verification, or reveal unnecessary complexity or process. Verification should exercise meaningful supported behaviour, including representative user workflows where appropriate. Selected checks passing does not by itself establish acceptance.
 
-### Guardrail Improvement
+### Framework Learning
 
-When repeated or avoidable issues occur, the answer should not only be to correct the current implementation.
+Recurring failures should prompt examination of their causes, rather than an automatic increase in guardrails. They may reveal defective implementation, excessive complexity, conflicting guidance, obsolete standards, unnecessary verification, or a risk not worth eliminating.
 
-The team should consider whether repository standards, agent operating guidance, templates, delivered specifications, or validation expectations need improvement.
+Consider clarifying guidance, improving an existing check, correcting implementation, simplifying a workflow, removing redundant mechanisms, or accepting proportionate residual risk. Add a control only when its necessity and expected benefit justify its cost.
 
-Over time, better guardrails should increase first-pass correctness and reduce the number and cost of improvement loops.
+A successful learning outcome may be less machinery. The aim is better delivery and fewer avoidable loops, not more governance.
 
 ## Decision Budget Model
 
@@ -338,7 +334,7 @@ Not all decisions require human involvement.
 
 Not all decisions should be delegated.
 
-The plan should define the decision budget.
+The plan should define the decision budget. Unresolved human-owned decisions remain reserved; shared decisions need an agreed resolution when material. Local agent choices remain subject to approved boundaries.
 
 ### Human Decisions
 
@@ -380,9 +376,9 @@ Material claims should be grounded in one of three evidence categories.
 
 ### Proven
 
-Supported by existing code, repository standards, documentation, approved plans, or explicit human instruction.
+Directly established by evidence appropriate to the claim, within stated limits. Code may establish that an implementation exists; standards, documentation, plans, or human instruction may establish an intended requirement. A passing test establishes success for the exercised conditions, and a successful build establishes that the selected build completed, not correct behaviour.
 
-Proven information may inform implementation when it is also in scope and not superseded by higher-priority guidance.
+Describe what the evidence establishes and its limits. Documentary support alone does not prove runtime behaviour; an agent's own compliance assertion is not independent assurance. Proven information may inform implementation when it is in scope and not superseded by higher-priority guidance.
 
 ### Inferred
 
@@ -402,7 +398,7 @@ It must be investigated, clarified, converted into an explicitly accepted assump
 
 ## Confidence Calibration
 
-Confidence is separate from evidence.
+Confidence is separate from evidence. High confidence does not broaden what the available evidence establishes.
 
 Two conclusions may both be inferred while having very different confidence levels.
 
@@ -430,11 +426,11 @@ When guidance conflicts, apply this order:
 2. Explicit human instruction
 3. Approved implementation plan
 4. Repository standards
-5. Existing repository patterns
+5. Existing repository patterns as contextual guidance where valid
 6. General engineering best practices
 7. Agent preference
 
-The agent must not choose a lower-ranked option when higher-ranked guidance exists.
+The agent must not choose a lower-ranked option when higher-ranked guidance exists. Existing implementation cannot override approved requirements. This order communicates authority; it does not mechanically enforce compliance.
 
 Explicit human instruction can override repository standards only when the override is intentional, visible, and accepted by the human.
 
@@ -461,7 +457,7 @@ Approval to commit, push, deploy, publish, or create a pull request should name 
 
 If implementation reveals a material decision that was not covered by the approved plan, the agent should stop and request an amendment before proceeding.
 
-Minor local implementation choices do not require separate approval when they are within the approved scope, reversible, low risk, and consistent with existing repository patterns.
+Minor local implementation choices do not require separate approval when they are within the approved scope, reversible, low risk, and consistent with applicable standards and valid architectural intent. An unresolved human-owned decision is not such a choice.
 
 An approved plan is not permission to expand scope.
 
@@ -564,23 +560,25 @@ No implementation occurs during gap analysis for feature work.
 
 The plan is refined until:
 
-- Unknowns are eliminated or accepted
-- Major implementation choices are constrained
+- Material unknowns are resolved, explicitly accepted, or deferred out of scope
+- Material implementation decisions are resolved or assigned to an authorised owner
 - Validation expectations are clear
 - Documentation expectations are clear
 - Decision ownership is clear
 
-The objective is a decision-complete plan, not a longer plan.
+The objective is a decision-complete plan, not a longer plan. Local implementation details may remain open within delegated authority. Planning reduces uncertainty but does not guarantee correct execution.
 
 ### Phase 4 - Implementation
 
 The agent executes the approved plan within approved boundaries.
 
-The agent must follow repository standards, reuse repository patterns, avoid scope expansion, preserve unrelated user changes, and surface newly discovered decisions.
+The agent must follow repository standards, respect valid architectural intent, avoid scope expansion, preserve unrelated user changes, and surface newly discovered material decisions. Reuse, removal, or replacement should serve approved requirements with the simplest coherent implementation.
 
 ### Phase 5 - Self Audit
 
-Before presenting work, the agent validates that requirements were implemented, scope boundaries were respected, standards were followed, existing patterns were respected, required tests and documentation were updated, and residual risks were identified.
+Before presenting work, the agent checks compliance with approved scope, requirements, and standards, reviews implementation correctness, and performs appropriate validation. Check required test and documentation updates and identify residual risks. Report separately what changed, which checks ran and their results, and what behaviour remains unverified.
+
+Self-audit can find mistakes but is not proof of correctness or independent assurance. Human review and independently observable evidence remain important in proportion to the change and its risks.
 
 ### Phase 6 - Human Review
 
@@ -615,8 +613,9 @@ Capture:
 - Which repository standard was missing, unclear, or ignored?
 - Which agent guidance should be improved?
 - Which part of the framework created unnecessary friction?
+- What should be corrected, simplified, removed, or accepted rather than controlled?
 
-Framework learning should improve future plans, standards, agent guidance, and delivered specifications.
+Framework learning should improve future delivery, including reducing unnecessary implementation and process machinery. New controls need a demonstrated purpose.
 
 ## Knowledge Transfer
 
@@ -645,11 +644,15 @@ Small, local, reversible changes should not require the same process as feature 
 
 Process exists to reduce avoidable implementation loops.
 
-When process costs more than the likely correction cost, reduce the process.
+When process costs more than the likely correction cost, reduce the process. Unnecessary complexity is itself a delivery risk in both software and collaboration. Retain mechanisms needed for approved requirements and credible operational risks.
+
+Choose focused verification for the relevant properties and risks of the change. Do not use test count as a quality measure, repeat validation without a reason, test imaginary or unreachable scenarios, or preserve obsolete tests solely because they exist. Re-run or broaden checks when changes, failures, or unresolved concerns justify the cost.
 
 ## Success Metrics
 
-Success is measured by:
+Success combines correct and maintainable delivery, human understanding, compliance with material requirements and constraints, proportionate verification, low avoidable rework, and low unnecessary process and operational cost.
+
+Useful indicators include:
 
 - First-pass acceptance rate
 - Number of post-implementation corrections
@@ -659,7 +662,10 @@ Success is measured by:
 - Reduction in unnecessary implementation cycles
 - Quality of surfaced uncertainty
 - Quality of decision ownership
-- Improvement of future guidance
+- Useful improvement, simplification, or removal of guidance and mechanisms
+- Implementation simplicity and maintenance and operational cost
+
+First-pass acceptance alone can conceal defects, complexity, poor understanding, or inadequate verification. Justified iteration may improve the eventual outcome.
 
 Metrics may be gathered lightly.
 
@@ -696,4 +702,4 @@ The framework succeeds when both operate within their strengths while compensati
 
 The ultimate goal is not autonomous development.
 
-The ultimate goal is reliable delivery with minimal unnecessary iteration.
+The ultimate goal is correct, maintainable delivery that humans understand, with proportionate verification, minimal avoidable iteration, and low unnecessary process and operational cost.
