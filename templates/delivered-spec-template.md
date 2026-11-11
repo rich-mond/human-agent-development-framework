@@ -1,6 +1,6 @@
 # Delivered Specification Template
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 Use this template after feature work, material behaviour changes, public contract changes, persistence changes, workflow changes, runtime configuration changes, deployment changes, or other changes where future context matters.
 
@@ -58,7 +58,7 @@ Describe where future changes are expected to attach or extend the implementatio
 
 ## 11. Validation Performed
 
-List commands, checks, manual validation, and results.
+List commands, checks, manual validation, and results. State which properties were demonstrated and distinguish these from remaining unverified behaviour.
 
 -
 
@@ -85,3 +85,4 @@ Answer only when useful.
 - Which repository standard was missing, unclear, or ignored?
 - Which agent guidance should be improved?
 - Which part of the process created unnecessary friction?
+- What should be corrected, simplified, removed, or accepted before considering a new control?

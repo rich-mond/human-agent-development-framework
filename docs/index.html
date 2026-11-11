@@ -248,7 +248,7 @@
 </head>
 <body>
   <main>
-    <p class="version">Version 0.8.3 Draft</p>
+    <p class="version">Version 0.8.4 Draft</p>
     <h1>Human-Agent Development Framework</h1>
 
     <p class="lead">
@@ -270,8 +270,9 @@
     <h2>Core Idea</h2>
 
     <p>
-      Every decision left open by a plan becomes a decision the agent may make during implementation.
-      HADF improves delivery quality by making the right decisions explicit at the right time, with the right owner.
+      Unresolved decisions create a risk of unauthorised assumptions; they do not transfer authority to the agent.
+      HADF supports delivery through explicit decision ownership and verification against approved requirements.
+      Better planning reduces uncertainty but cannot guarantee correct execution.
     </p>
 
     <div class="diagram" aria-label="Human-agent development convergence model">
@@ -310,14 +311,26 @@
       </div>
 
       <div class="handoff">Accepted implementation</div>
-      <div class="learn">Delivered specification -> improved guardrails for future work</div>
+      <div class="learn">Delivered specification -> proportionate improvements for future work</div>
     </div>
+
+    <p>
+      Learning may clarify guidance, correct implementation, simplify workflows, remove obsolete controls,
+      or accept proportionate residual risk. Add controls only when justified.
+    </p>
 
     <h2>What Problem Does It Solve?</h2>
 
     <p>
       AI coding agents can produce code quickly, but the expensive part of agent-assisted development is often convergence:
       the work required to move from an initial request to an accepted, maintainable implementation.
+      Costs can arise from unclear requirements, poor decisions, execution or verification failures,
+      and unnecessary implementation or process complexity.
+    </p>
+
+    <p>
+      Success combines correct, maintainable delivery, human understanding, compliance with material requirements,
+      proportionate verification, and low avoidable rework and cost. First-pass acceptance alone is insufficient.
     </p>
 
     <div class="grid">

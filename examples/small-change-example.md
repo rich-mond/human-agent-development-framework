@@ -1,6 +1,6 @@
 # Small Change Example
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 ## 1. Change Name
 
@@ -48,8 +48,8 @@ Stop and ask before implementation if:
 
 ### Commands Or Checks
 
-- Run the component test or snapshot test for the project list empty state.
-- If no focused test exists, run the nearest project-list test file.
+- Check that the project list empty state displays the approved copy.
+- Run an existing focused component or snapshot test if it meaningfully checks the changed message; otherwise inspect the rendered empty state.
 
 ### Validation Not Required Or Not Possible
 
@@ -57,7 +57,7 @@ Item: Full application regression test
 
 Reason: Copy-only local change
 
-Residual risk: Low; nearby component validation is sufficient.
+Residual risk: Low; focused validation covers the displayed copy without exercising unrelated workflows.
 
 ## 8. Completion Summary
 

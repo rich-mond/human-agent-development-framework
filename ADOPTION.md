@@ -1,6 +1,6 @@
 # Adoption Guide
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 This guide helps teams adopt the Human-Agent Development Framework without turning it into ceremony.
 
@@ -10,7 +10,7 @@ The goal is to improve human-agent delivery quality by reducing avoidable implem
 
 Start with the smallest useful set of guardrails.
 
-Add process only when it reduces rework, protects important decisions, or improves future delivery.
+Add process only when its expected benefit justifies its cost. Clarifying guidance, correcting implementation, simplifying workflows, removing obsolete controls, or accepting proportionate residual risk may be more useful than adding guardrails.
 
 ## Day 1 Adoption
 
@@ -25,19 +25,19 @@ Use this when a team wants immediate value without changing its delivery process
    - When the agent must stop
 4. Use `templates/small-change-template.md` for narrow, reversible changes.
 
-Day 1 adoption is successful when agents ask better questions, preserve repository patterns, and report validation more clearly.
+Day 1 adoption is successful when agents ask better questions, respect valid architectural intent, and report validation more clearly.
 
 ## Week 1 Adoption
 
 Use this when agents are regularly making production code changes.
 
 1. Identify recurring sources of implementation loops.
-2. Add or improve repository standards for those areas.
+2. Address their causes through focused corrections, clearer guidance, or simplification; add standards only where useful.
 3. Use `templates/plan-template.md` for feature work and material behaviour changes.
 4. Capture delivered specifications for changes that future agents or humans will need to understand.
 5. Review whether stop conditions and approval expectations are clear.
 
-Week 1 adoption is successful when plans constrain the right decisions and first-pass implementations require fewer material corrections.
+Week 1 adoption is successful when plans resolve or assign material decisions and delivery is correct, maintainable, understood, and proportionately verified, with less avoidable rework.
 
 ## Full Adoption
 
@@ -48,9 +48,9 @@ Use this when a team wants continuous improvement of human-agent delivery.
 3. Use decision-complete plans for material work.
 4. Store delivered specifications in a discoverable location.
 5. Periodically review framework learning notes.
-6. Update standards, templates, and agent guidance when avoidable loops repeat.
+6. Review recurring issues and improve, simplify, or remove standards, checks, templates, or guidance as appropriate.
 
-Full adoption is successful when repeated issues become improved guardrails rather than repeated corrections.
+Full adoption is successful when lessons improve delivery without unnecessary machinery. Repeated issues do not necessarily mean insufficient governance; introduce new controls only when justified.
 
 ## Approval Levels
 
@@ -96,8 +96,9 @@ Use the full template when the change affects architecture, public contracts, pe
 ## Common Adoption Mistakes
 
 - Using the full plan template for tiny changes
-- Treating existing code as the only source of guidance
+- Treating existing implementation as authoritative design
 - Letting unknowns silently become implementation
 - Asking agents to make business or architecture decisions without approval
 - Skipping delivered specifications for changes that future work will depend on
-- Capturing lessons but not updating guardrails
+- Capturing lessons without addressing their causes
+- Adding controls automatically, or treating first-pass acceptance as proof of quality

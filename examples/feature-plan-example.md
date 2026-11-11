@@ -1,6 +1,6 @@
 # Feature Plan Example
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 This example uses the decision-complete implementation plan shape for a fictional task management application.
 

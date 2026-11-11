@@ -6,6 +6,17 @@ This project uses deliberate framework versioning. Version entries should descri
 
 The format is based on human-readable release notes rather than generated commit history.
 
+## 0.8.4 Draft - 2026-11-11
+
+### Changed
+
+- Calibrated the convergence thesis and clarified the limits of decision-complete planning and unresolved decision authority.
+- Distinguished behavioural guidance, verified outcomes, and enforced constraints; refined evidence and proportionate verification guidance.
+- Revised repository equilibrium to permit authorised removal or replacement of obsolete implementation while preserving valid architectural intent.
+- Broadened framework learning to include correction, simplification, removal, accepted risk, and justified controls.
+- Refined success indicators beyond first-pass acceptance and aligned adoption guidance, templates, examples, and public diagrams.
+- Updated active version markers to `0.8.4 Draft`; the framework remains a draft.
+
 ## 0.8.3 Draft - 2026-07-08
 
 ### Added

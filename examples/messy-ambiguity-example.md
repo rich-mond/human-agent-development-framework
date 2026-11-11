@@ -1,6 +1,6 @@
 # Messy Ambiguity Example
 
-Version: 0.8.3 Draft
+Version: 0.8.4 Draft
 
 This example shows how HADF handles a request that looks simple but contains hidden product, data, and operational decisions.
 
@@ -81,12 +81,8 @@ Stop conditions:
 
 - The project list API must change.
 - Search behaviour must change.
-- No existing test can distinguish archived from active projects.
+- Archived and active projects cannot be distinguished reliably from available evidence.
 
 ## Framework Learning
 
-This request reveals a missing repository standard:
-
-- Archive visibility rules should be documented by surface: list, search, reports, API, and exports.
-
-Adding that standard would reduce future implementation loops around archived data.
+This request reveals unclear archive visibility expectations. Clarify the affected surfaces in existing product guidance; add a repository standard only if recurring work justifies it. A one-off clarification may be sufficient.
