@@ -25,6 +25,15 @@ HADF helps teams reduce convergence cost by defining:
 
 Convergence cost can come from unclear requirements, poor decisions, execution or verification failures, and unnecessary implementation or process complexity. Success requires correct, maintainable delivery that humans understand, with proportionate verification and low avoidable rework and cost.
 
+## A Practical Example
+
+In the fictional [archived-project example](examples/messy-ambiguity-example.md):
+
+- **Initial request:** "Make archived projects disappear from the project list."
+- **Clarification:** "Should they be hidden only from the default list, or should search, API responses, reports and other access paths change too?"
+- **Illustrative human decision:** "Hide them from the default list only. Leave search, reports, APIs and archive management unchanged."
+- **Result:** The implementation scope is explicit, reducing the risk of unintended changes elsewhere. Correct implementation still needs proportionate verification.
+
 ## Who This Is For
 
 This framework is intended for:
@@ -36,29 +45,27 @@ This framework is intended for:
 
 ## Repository Contents
 
-- `framework.md` - the core framework
-- `ADOPTION.md` - practical adoption guidance for teams
-- `CHANGELOG.md` - deliberate versioned changes to the framework and templates
-- `LICENSE` - license notice and attribution guidance
-- `PUBLICATION-CHECKLIST.md` - checks for coherent public draft and stable releases
-- `CONTRIBUTING.md` - contribution and feedback guidance
-- `examples/` - compact worked examples, including one ambiguity example
-- `templates/agents-template.md` - a template for repository-specific agent operating guidance
-- `templates/plan-template.md` - a decision-complete implementation plan template for material changes
-- `templates/small-change-template.md` - a lightweight template for narrow, reversible changes
-- `templates/delivered-spec-template.md` - a template for capturing what was actually delivered
+- [framework.md](framework.md) - the core framework
+- [ADOPTION.md](ADOPTION.md) - practical adoption guidance for teams
+- [CHANGELOG.md](CHANGELOG.md) - deliberate versioned changes to the framework and templates
+- [LICENSE](LICENSE) - license notice and attribution guidance
+- [PUBLICATION-CHECKLIST.md](PUBLICATION-CHECKLIST.md) - checks for coherent public draft and stable releases
+- [CONTRIBUTING.md](CONTRIBUTING.md) - contribution and feedback guidance
+- [examples/](examples/README.md) - compact worked examples, including one ambiguity example
+- [templates/agents-template.md](templates/agents-template.md) - a template for repository-specific agent operating guidance
+- [templates/plan-template.md](templates/plan-template.md) - a decision-complete implementation plan template for material changes
+- [templates/small-change-template.md](templates/small-change-template.md) - a lightweight template for narrow, reversible changes
+- [templates/delivered-spec-template.md](templates/delivered-spec-template.md) - a template for capturing what was actually delivered
 
 ## Start Here
 
-To adopt HADF in a repository:
+Choose the entry point that fits your work:
 
-1. Read `framework.md`.
-2. Use `ADOPTION.md` to choose a lightweight, standard, or full adoption path.
-3. Copy `templates/agents-template.md` into your repository as `AGENTS.md` or equivalent.
-4. Use `templates/small-change-template.md` for small, reversible changes.
-5. Use `templates/plan-template.md` for feature work or material changes.
-6. Use `templates/delivered-spec-template.md` after material changes.
-7. Start with `examples/README.md` when you want to see the expected level of detail.
+- **Exploring:** Read the [framework](framework.md), then see the [archived-project ambiguity example](examples/messy-ambiguity-example.md).
+- **Trying HADF:** Follow [Day 1 adoption](ADOPTION.md#day-1-adoption), copy and customise the [agent guidance template](templates/agents-template.md) as `AGENTS.md` or equivalent, and use the [small-change template](templates/small-change-template.md) for narrow, reversible work.
+- **Planning material work:** Consult the [planning guidance](ADOPTION.md#minimum-viable-feature-plan), use the [full plan template](templates/plan-template.md) when justified by the change, and refer to the [feature-plan example](examples/feature-plan-example.md).
+
+After material changes, use the [delivered-specification template](templates/delivered-spec-template.md) to capture what was built. See the [examples overview](examples/README.md) for the expected level of detail.
 
 ## Adoption Modes
 
@@ -142,3 +149,9 @@ The framework is usable, but the language, templates, and repository structure m
 This draft is licensed under the Creative Commons Attribution 4.0 International License.
 
 Copyright (c) 2026 Alan Cavanagh.
+
+You may copy and adapt HADF templates, including for commercial use, subject to [LICENSE](LICENSE) and [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Give reasonable attribution identifying the original work and author, linking to the source and licence, and stating whether you made changes. Retain any existing modification notices. Attribution must not suggest endorsement by the author.
+
+Attribution need not appear inside every copied template. An acknowledgement in repository documentation or a third-party notices file may be appropriate, depending on how the material is reused. One example you can adapt:
+
+> Templates adapted from the [Human-Agent Development Framework (HADF)](https://github.com/rich-mond/human-agent-development-framework), Copyright (c) 2026 Alan Cavanagh, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Modified for this repository.
