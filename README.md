@@ -1,5 +1,10 @@
 # Human-Agent Development Framework
 
+[![Status: Draft](https://img.shields.io/badge/status-draft-orange?style=flat)](#status)
+[![Version: 0.8.4](https://img.shields.io/badge/version-0.8.4-blue?style=flat)](CHANGELOG.md)
+[![Licence: CC BY 4.0](https://img.shields.io/badge/licence-CC_BY_4.0-green?style=flat)](LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-website-555?style=flat)](https://rich-mond.github.io/human-agent-development-framework/)
+
 Version: 0.8.4 Draft
 
 The Human-Agent Development Framework (HADF) is a practical collaboration model for humans and AI coding agents.
