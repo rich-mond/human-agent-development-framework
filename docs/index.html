@@ -17,9 +17,6 @@
       --soft: #f6f8fa;
       --accent: #0969da;
       --accent-ink: #ffffff;
-      --spec: #fff8c5;
-      --impl: #ddf4ff;
-      --learn: #dafbe1;
     }
 
     * {
@@ -126,97 +123,20 @@
     }
 
     .diagram {
-      margin-top: 28px;
+      margin: 28px 0;
       overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 22px;
-      background: #ffffff;
     }
 
-    .lane {
-      min-width: 760px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
+    .diagram img {
+      display: block;
+      width: 100%;
+      min-width: 920px;
+      height: auto;
     }
 
-    .lane + .lane {
-      margin-top: 18px;
-    }
-
-    .lane.spec {
-      background: var(--spec);
-    }
-
-    .lane.impl {
-      background: var(--impl);
-    }
-
-    .lane-title {
-      margin-bottom: 12px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .arrow {
-      color: var(--muted);
-      font-size: 1.4rem;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .step {
-      min-height: 54px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #8c959f;
-      border-radius: 8px;
-      padding: 10px;
-      background: #ffffff;
-      text-align: center;
-      font-weight: 650;
-    }
-
-    .loop-note {
-      display: inline-block;
-      margin-top: 10px;
-      border: 1px dashed #8c959f;
-      border-radius: 999px;
-      padding: 4px 12px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    .loop-wrap {
-      text-align: center;
-    }
-
-    .handoff {
-      margin: 12px 0;
-      color: var(--muted);
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .learn {
-      min-width: 760px;
-      margin-top: 18px;
-      border: 1px solid #8c959f;
-      border-radius: 8px;
-      padding: 16px;
-      background: var(--learn);
-      text-align: center;
-      font-weight: 700;
+    .diagram:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
     }
 
     footer {
@@ -234,14 +154,6 @@
 
       .grid {
         grid-template-columns: 1fr;
-      }
-
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .arrow {
-        transform: rotate(90deg);
       }
     }
   </style>
@@ -275,44 +187,15 @@
       Better planning reduces uncertainty but cannot guarantee correct execution.
     </p>
 
-    <div class="diagram" aria-label="Human-agent development convergence model">
-      <div class="lane spec">
-        <div class="lane-title">Specification creation</div>
-        <div class="steps">
-          <div class="step">Intent</div>
-          <div class="arrow" aria-hidden="true">-></div>
-          <div class="step">Clarify</div>
-          <div class="arrow" aria-hidden="true">-></div>
-          <div class="step">Decide</div>
-          <div class="arrow" aria-hidden="true">-></div>
-          <div class="step">Validate feasibility</div>
-        </div>
-        <div class="loop-wrap">
-          <div class="loop-note">Gaps loop back to clarification and decisions.</div>
-        </div>
-      </div>
+    <figure class="diagram" tabindex="0" role="region" aria-label="Specification creation diagram, scroll horizontally to explore">
+      <img src="assets/specification-creation.svg" width="1120" height="387"
+        alt="Specification creation: Intent leads to Clarify, Decide, Validate feasibility, and a Feasible specification for implementation. Gaps found during feasibility validation return to clarification and decisions.">
+    </figure>
 
-      <div class="handoff">Feasible specification</div>
-
-      <div class="lane impl">
-        <div class="lane-title">Implementation</div>
-        <div class="steps">
-          <div class="step">Guardrailed first pass</div>
-          <div class="arrow" aria-hidden="true">-></div>
-          <div class="step">Validate</div>
-          <div class="arrow" aria-hidden="true">-></div>
-          <div class="step">Review</div>
-          <div class="arrow" aria-hidden="true">-></div>
-          <div class="step">Refine</div>
-        </div>
-        <div class="loop-wrap">
-          <div class="loop-note">Not done loops through refinement, validation, and review.</div>
-        </div>
-      </div>
-
-      <div class="handoff">Accepted implementation</div>
-      <div class="learn">Delivered specification -> proportionate improvements for future work</div>
-    </div>
+    <figure class="diagram" tabindex="0" role="region" aria-label="Implementation diagram, scroll horizontally to explore">
+      <img src="assets/implementation.svg" width="1120" height="488"
+        alt="Implementation: A feasible specification guides a Guardrailed first pass, followed by Validate, Review, Refine, and Accepted implementation. If not done, refinement loops back through validation and review. Acceptance produces a Delivered specification, supporting Proportionate improvements for future work where justified.">
+    </figure>
 
     <p>
       Learning may clarify guidance, correct implementation, simplify workflows, remove obsolete controls,

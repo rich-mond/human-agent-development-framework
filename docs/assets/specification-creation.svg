@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 387" width="1120" height="387" role="img" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">Specification creation</title>
+<desc id="diagram-desc">Intent leads to clarification, decisions, feasibility validation, and a feasible specification. Gaps found during validation return to clarification and decisions.</desc>
+<style>
+  .hand { font-family: "Comic Sans MS", "Comic Neue", "Trebuchet MS", sans-serif; }
+  .label { font-size: 21px; font-weight: 700; fill: #303a47; text-anchor: middle; }
+  .note { font-size: 17px; fill: #596576; text-anchor: middle; }
+  .heading { font-size: 28px; font-weight: 700; fill: #303a47; }
+  .minor { font-size: 15px; fill: #596576; }
+  .line { stroke: #303a47; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+  .feedback { stroke: #9178a6; stroke-width: 2.5px; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .connector { stroke: #596576; stroke-width: 2.5px; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+</style>
+<path d="M22 31 Q90 17 185 26" fill="none" stroke="#bcaed0" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+<path d="M34 77 Q150 69 355 78 Q380 87 347 102 Q125 100 34 99 Z" fill="#a991c2" fill-opacity=".22"/><path d="M34 113 Q170 115 351 111" stroke="#a991c2" stroke-width="2.2" stroke-linecap="round" fill="none"/><text x="39" y="44" class="hand minor">01 / THE CONVERGENCE MODEL</text><text x="39" y="101" class="hand heading">Specification creation</text>
+<g transform="translate(0 40)">
+<path d="M42.0 100.0 Q25.0 100.0 26.0 118.0 L25.0 218.0 Q25.0 235.0 42.0 235.0 L192.0 236.0 Q207.0 236.0 207.0 218.0 L208.0 117.0 Q208.0 100.0 190.0 101.0 Z" fill="#fffdf8" stroke="#303a47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(86.0,116.0)" class="line" stroke-width="2.2"><circle cx="30" cy="24" r="18"/><circle cx="30" cy="24" r="9"/><circle cx="30" cy="24" r="2.5" fill="#7b9fc2" stroke="none"/><path d="M45 8 L57 -3 M48 1 L57 -3 L53 7"/></g><text x="116" y="210" class="hand label">Intent</text>
+<path d="M210 167 C223 166, 232 168, 241 167" class="connector"/><path d="M234 160 L243 167 L234 174" class="connector"/>
+<path d="M264.0 100.0 Q247.0 100.0 248.0 118.0 L247.0 218.0 Q247.0 235.0 264.0 235.0 L414.0 236.0 Q429.0 236.0 429.0 218.0 L430.0 117.0 Q430.0 100.0 412.0 101.0 Z" fill="#f9fbff" stroke="#303a47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(308.0,116.0)" class="line" stroke-width="2.2"><path d="M10 11 Q10 6 18 6 H43 Q51 6 51 14 V30 Q51 38 42 38 H24 L14 46 L17 37 Q10 36 10 29 Z"/><path d="M21 23 H22 M30 23 H31 M39 23 H40" stroke-width="3"/></g><text x="338" y="210" class="hand label">Clarify</text>
+<path d="M432 167 C445 166, 454 168, 463 167" class="connector"/><path d="M456 160 L465 167 L456 174" class="connector"/>
+<path d="M486.0 100.0 Q469.0 100.0 470.0 118.0 L469.0 218.0 Q469.0 235.0 486.0 235.0 L636.0 236.0 Q651.0 236.0 651.0 218.0 L652.0 117.0 Q652.0 100.0 634.0 101.0 Z" fill="#fbf8ff" stroke="#303a47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(530.0,116.0)" class="line" stroke-width="2.2"><path d="M30 4 V47 M18 47 H42 M12 14 H49"/><circle cx="30" cy="12" r="3.5"/><path d="M15 15 L8 32 M15 15 L22 32 M45 15 L38 32 M45 15 L52 32 M5 32 Q15 44 25 32 Z M35 32 Q45 44 55 32 Z"/></g><text x="560" y="210" class="hand label">Decide</text>
+<path d="M654 167 C667 166, 676 168, 685 167" class="connector"/><path d="M678 160 L687 167 L678 174" class="connector"/>
+<path d="M708.0 100.0 Q691.0 100.0 692.0 118.0 L691.0 218.0 Q691.0 235.0 708.0 235.0 L858.0 236.0 Q873.0 236.0 873.0 218.0 L874.0 117.0 Q874.0 100.0 856.0 101.0 Z" fill="#fffdfa" stroke="#303a47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(752.0,116.0)" class="line" stroke-width="2.2"><rect x="15" y="7" width="30" height="39" rx="3"/><path d="M22 18 l3 3 l5 -6 M32 19 H39 M22 31 l3 3 l5 -6 M32 32 H39"/></g><text x="782" y="199" class="hand label"><tspan x="782" dy="0">Validate</tspan><tspan x="782" dy="23">feasibility</tspan></text>
+<path d="M876 167 C889 166, 898 168, 907 167" class="connector"/><path d="M900 160 L909 167 L900 174" class="connector"/>
+<path d="M930.0 100.0 Q913.0 100.0 914.0 118.0 L913.0 218.0 Q913.0 235.0 930.0 235.0 L1080.0 236.0 Q1095.0 236.0 1095.0 218.0 L1096.0 117.0 Q1096.0 100.0 1078.0 101.0 Z" fill="#edf6ee" stroke="#303a47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(974.0,116.0)" class="line" stroke-width="2.2"><path d="M16 5 H39 L48 14 V45 H16 Z M39 5 V14 H48 M23 23 H40 M23 29 H35"/><circle cx="43" cy="38" r="11" fill="#e6f3e9"/><path d="M38 38 l4 4 l7 -8"/></g><text x="1004" y="199" class="hand label"><tspan x="1004" dy="0">Feasible</tspan><tspan x="1004" dy="23">specification</tspan></text>
+<path d="M784 237 C786 261 789 273 762 277 C653 284 454 278 348 281 C338 281 339 268 339 239" class="feedback"/>
+<path d="M331 247 L339 235 L347 247" class="feedback"/>
+<path d="M555 280 C554 270 556 255 556 240" class="feedback"/>
+<path d="M548 247 L556 235 L564 247" class="feedback"/>
+<path d="M252 325 Q561 328 875 324" fill="none" stroke="#d4c5e0" stroke-width="6" opacity=".25" stroke-linecap="round"/>
+<text x="560" y="314" class="hand note">Gaps return to clarification and decisions</text>
+</g>
+</svg>
