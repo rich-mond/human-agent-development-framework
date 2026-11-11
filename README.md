@@ -97,7 +97,12 @@ The framework treats delivery as a convergence process:
 ---
 config:
   look: handDrawn
-  theme: neutral
+  theme: base
+  themeVariables:
+    primaryTextColor: "#303a47"
+    textColor: "#303a47"
+    lineColor: "#596576"
+    edgeLabelBackground: "#f5f0f7"
 ---
 flowchart TB
     subgraph S[Specification creation]
@@ -118,6 +123,12 @@ flowchart TB
     S -->|feasible spec| I
     I -->|accepted| D
     D --> G
+
+    classDef default fill:#fffdf8,stroke:#73808d,color:#303a47
+    classDef learning fill:#fff1e6,stroke:#b9a18b,color:#303a47
+    class D,G learning
+    style S fill:#f7f1fa,stroke:#bcaed0,color:#303a47
+    style I fill:#f0f7fb,stroke:#b2c7d8,color:#303a47
 ```
 
 ## Status
