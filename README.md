@@ -94,6 +94,11 @@ The framework treats delivery as a convergence process:
 4. Learn what to clarify, correct, simplify, remove, or accept; add controls only when justified
 
 ```mermaid
+---
+config:
+  look: handDrawn
+  theme: neutral
+---
 flowchart TB
     subgraph S[Specification creation]
         direction LR
